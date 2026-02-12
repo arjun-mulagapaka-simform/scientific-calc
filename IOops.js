@@ -2,11 +2,8 @@ const inp = document.getElementById('inp-num');
 
 export class IOops{
     static getData(){
-        return parseFloat(inp.innerText.trim());
-    }
-    static getTextFromButton(btn){
-        let text = btn.innerText.trim();
-        return text;
+        // if (isNaN(inp.value)) throw "Enter a number"; need to improve this
+        return parseFloat(inp.value.trim());
     }
     static setData(num){
         inp.innerText = "";

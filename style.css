@@ -1,0 +1,64 @@
+:root {
+  --primary: hsl(0, 0%, 89%);
+  --bg: hsl(0, 0%, 90%);
+  --text: hsl(0, 0%, 0%);
+  --text-muted: hsl(0, 0%, 54%);
+  --bg-white: hsl(0,0%,100%);
+}
+
+*:focus {
+    border: none;
+}
+
+input:focus{
+    outline: none !important;
+    box-shadow: none !important;
+}
+
+.primary-bg-color {
+    background-color: var(--primary);
+}
+
+.bg-color{
+    color: var(--bg);
+}
+
+.bg-bg-color {
+    background-color: var(--bg);
+}
+
+.bg-white {
+    background-color: var(--bg-white);
+}
+
+.primary-text-color {
+    color: var(--text);
+}
+
+.muted-text-color {
+    color: var(--text-muted);
+}
+
+.main-w{
+    width: 300px;
+}
+
+.num-input input {
+    font-size: 30px;
+}
+
+.num-input input:focus {
+    background-color: var(--bg);
+}
+
+@media (min-width: 468px) {
+    .main-w {
+        width: 400px;
+    }
+}
+
+@media (min-width: 624px) {
+    .main-w {
+        width: 550px;
+    }
+}

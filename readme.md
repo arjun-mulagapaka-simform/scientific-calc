@@ -1,0 +1,1 @@
+Dummy of a scientific calculator built using HTML, CSS, Bootstrap and JS

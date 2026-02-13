@@ -22,6 +22,7 @@ export class IOops{
         inp.value = num;
     }
     static append(e){
+        if (inp.value.length > 10) throw "Number too large";
         let digit = IOops.getDataOp(e);
         inp.value += digit;
     }

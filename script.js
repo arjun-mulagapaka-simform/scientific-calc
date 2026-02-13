@@ -42,7 +42,7 @@ function handleUnaryOperation(e){
         let operator = e.currentTarget.dataset.op;
         console.log(value + " " + operator);        
     } catch (error) {
-        console.log(error);
+        alert(error);
     }
 }
 
@@ -52,7 +52,7 @@ function handleBinaryOperation(e){
         let operator = e.currentTarget.dataset.op;
         console.log(value + " " + operator);        
     } catch (error) {
-        console.log(error);
+        alert(error);
     }
 }
 
@@ -62,6 +62,6 @@ function handleInpManipulationOperation(e){
         let operator = e.currentTarget.dataset.op;
         console.log(value + " " + operator);        
     } catch (error) {
-        console.log(error);
+        alert(error);
     }
 }

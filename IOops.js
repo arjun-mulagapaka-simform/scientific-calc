@@ -2,11 +2,19 @@ const inp = document.getElementById('inp-num');
 
 export class IOops{
     static getData(){
-        // if (isNaN(inp.value)) throw "Enter a number"; need to improve this
-        return parseFloat(inp.value.trim());
+        if (inp.value === "") {
+            throw new Error("Input is empty or invalid");
+        }
+
+        const val = inp.valueAsNumber;
+
+        if (Number.isNaN(val)) {
+            throw new Error("Enter a valid number");
+        }
+
+        return val;
     }
     static setData(num){
-        inp.innerText = "";
-        inp.innerText = num;
+        inp.value = num;
     }
 }

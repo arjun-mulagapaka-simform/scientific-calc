@@ -41,10 +41,12 @@ export class IOops{
         }
     }
     static toggleSign(){
-        if (inp.value === "") IOops.append('-');
-        let sign = inp.value.slice(1);
+        if (inp.value === "") inp.value = "-";
+        let sign = inp.value.slice(1,2);
         if (!sign.includes('-')){
-            IOops.append('-');
+            inp.value = "-";
+        }else {
+            inp.value = inp.value.slice(2);
         }
     }
 }

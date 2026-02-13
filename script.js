@@ -43,7 +43,9 @@ document.querySelectorAll('.digit-btn').forEach((button)=>{
 function handleUnaryOperation(e){
     let data = handleDataFetch(e);
     let op = handleOpFetch(e);
-    console.log(data + " "+ op);
+    if (Number.isNaN(data) || !op) return;
+    let result = unaryActions[op](data);
+    IOops.setData(result);
 }
 
 function handleBinaryOperation(e){
@@ -86,4 +88,13 @@ const inputActions = {
     decimal: () => IOops.addDecimal()
 };
 
-// const 
+const unaryActions = {
+    square: (val) => Calculator.square(val),
+    inverse: (val) => Calculator.inverse(val),
+    absolute: (val) => Calculator.abs(val),
+    squareroot: (val) => Calculator.sqrt(val),
+    factorial: (val) => Calculator.factorial(val),
+    powertoten: (val) => Calculator.exp(10,val),
+    log: (val) => Calculator.log(val),
+    naturallog: (val) => Calculator.ln(val)
+}

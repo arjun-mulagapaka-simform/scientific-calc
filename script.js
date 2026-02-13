@@ -39,7 +39,7 @@ document.querySelectorAll('.input-manipulator-btn').forEach((button)=>{
 function handleUnaryOperation(e){
     try {
         let value = IOops.getData();
-        let operator = e.currentTarget.dataset.op;
+        let operator = IOops.getDataOp(e);
         console.log(value + " " + operator);        
     } catch (error) {
         alert(error);
@@ -49,7 +49,7 @@ function handleUnaryOperation(e){
 function handleBinaryOperation(e){
     try {
         let value = IOops.getData();
-        let operator = e.currentTarget.dataset.op;
+        let operator = IOops.getDataOp(e);
         console.log(value + " " + operator);        
     } catch (error) {
         alert(error);
@@ -59,7 +59,7 @@ function handleBinaryOperation(e){
 function handleInpManipulationOperation(e){
     try {
         let value = IOops.getData();
-        let operator = e.currentTarget.dataset.op;
+        let operator = IOops.getDataOp(e);
         console.log(value + " " + operator);        
     } catch (error) {
         alert(error);

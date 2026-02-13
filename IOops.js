@@ -14,6 +14,10 @@ export class IOops{
 
         return val;
     }
+    static getDataOp(e){
+        let val = e.currentTarget.dataset.op.trim();
+        return val;
+    }
     static setData(num){
         inp.value = num;
     }

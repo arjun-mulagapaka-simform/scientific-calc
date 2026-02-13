@@ -36,32 +36,54 @@ document.querySelectorAll('.input-manipulator-btn').forEach((button)=>{
     button.addEventListener('click',handleInpManipulationOperation);
 });
 
+document.querySelectorAll('.digit-btn').forEach((button)=>{
+    button.addEventListener('click',handleDigitOperation);
+});
+
 function handleUnaryOperation(e){
-    try {
-        let value = IOops.getData();
-        let operator = IOops.getDataOp(e);
-        console.log(value + " " + operator);        
-    } catch (error) {
-        alert(error);
-    }
+    let data = handleDataFetch(e);
+    let op = handleOpFetch(e);
+    console.log(data + " "+ op);
 }
 
 function handleBinaryOperation(e){
+    handleDataFetch(e);
+}
+
+function handleInpManipulationOperation(e){
+    let op = handleOpFetch(e);
+    if (!op) return;
+    inputActions[op]();
+}
+
+function handleDigitOperation(e){
+    inputActions['append'](e);
+}
+
+function handleDataFetch(){
     try {
         let value = IOops.getData();
-        let operator = IOops.getDataOp(e);
-        console.log(value + " " + operator);        
+        return value;       
     } catch (error) {
+        alert(error);
+    }   
+}
+
+function handleOpFetch(e){
+    try{
+        let op = IOops.getDataOp(e);
+        return op;
+    }catch (error) {
         alert(error);
     }
 }
 
-function handleInpManipulationOperation(e){
-    try {
-        let value = IOops.getData();
-        let operator = IOops.getDataOp(e);
-        console.log(value + " " + operator);        
-    } catch (error) {
-        alert(error);
-    }
-}
+const inputActions = {
+    clear: () => IOops.clear(),
+    removelastchar: () => IOops.pop(),
+    togglesign: () => IOops.toggleSign(),
+    append: (e) => IOops.append(e),
+    decimal: () => IOops.addDecimal()
+};
+
+// const 

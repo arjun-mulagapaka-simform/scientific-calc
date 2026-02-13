@@ -6,7 +6,7 @@ export class IOops{
             throw new Error("Input is empty or invalid");
         }
 
-        const val = inp.valueAsNumber;
+        const val = Number(inp.value);
 
         if (Number.isNaN(val)) {
             throw new Error("Enter a valid number");
@@ -41,12 +41,12 @@ export class IOops{
         }
     }
     static toggleSign(){
-        if (inp.value === "") inp.value = "-";
-        let sign = inp.value.slice(1,2);
-        if (!sign.includes('-')){
-            inp.value = "-";
+        if (inp.value === "") return;
+        
+        if (!inp.value.startsWith('-')){
+            inp.value = "-" + inp.value;
         }else {
-            inp.value = inp.value.slice(2);
+            inp.value = inp.value.slice(1);
         }
     }
 }

@@ -15,7 +15,7 @@
     <h1 class="top-heading">Scientific Calculator</h1>
     <main class="container-fluid d-flex flex-column gap-2 main-w bg-bg-color rounded-3">
         <div class="num-input w-100">
-            <input type="number" class="form-control form-control-lg p-1 w-100 bg-bg-color border-0 text-end" placeholder="0" id="inp-num">
+            <input type="text" class="form-control form-control-lg p-1 w-100 bg-bg-color border-0 text-end" placeholder="0" id="inp-num" readonly>
         </div>
         <div class="d-flex justify-content-start gap-2 deg-controls">
             <button class="btn p-2">DEG</button>
@@ -51,37 +51,37 @@
             </div>
             <div class="row gap-1 my-1">
                 <button class="btn p-2 col primary-bg-color unary-btn" data-op="squareroot"><sup>2</sup>√x</button>
-                <button class="btn p-2 col primary-bg-color" data-op="openingpara">(</button>
-                <button class="btn p-2 col primary-bg-color" data-op="closingpara">)</button>
+                <button class="btn p-2 col primary-bg-color" data-op="append">(</button>
+                <button class="btn p-2 col primary-bg-color" data-op="append">)</button>
                 <button class="btn p-2 col primary-bg-color unary-btn" data-op="factorial">n!</button>
                 <button class="btn p-2 col primary-bg-color binary-btn" data-op="division">/</button>
             </div>
             <div class="row gap-1 my-1">
                 <button class="btn p-2 col primary-bg-color binary-btn" data-op="power">x<sup>y</sup></button>
-                <button class="btn p-2 col bg-white fw-bold" data-op="7">7</button>
-                <button class="btn p-2 col bg-white fw-bold" data-op="8">8</button>
-                <button class="btn p-2 col bg-white fw-bold" data-op="9">9</button>
+                <button class="btn p-2 col bg-white fw-bold digit-btn" data-op="7">7</button>
+                <button class="btn p-2 col bg-white fw-bold digit-btn" data-op="8">8</button>
+                <button class="btn p-2 col bg-white fw-bold digit-btn" data-op="9">9</button>
                 <button class="btn p-2 col primary-bg-color binary-btn" data-op="multiplication">X</button>
             </div>
             <div class="row gap-1 my-1">
                 <button class="btn p-2 col primary-bg-color unary-btn" data-op="10power">10<sup>x</sup></button>
-                <button class="btn p-2 col bg-white fw-bold" data-op="4">4</button>
-                <button class="btn p-2 col bg-white fw-bold" data-op="5">5</button>
-                <button class="btn p-2 col bg-white fw-bold" data-op="6">6</button>
+                <button class="btn p-2 col bg-white fw-bold digit-btn" data-op="4">4</button>
+                <button class="btn p-2 col bg-white fw-bold digit-btn" data-op="5">5</button>
+                <button class="btn p-2 col bg-white fw-bold digit-btn" data-op="6">6</button>
                 <button class="btn p-2 col primary-bg-color binary-btn" data-op="subtraction">--</button>
             </div>
             <div class="row gap-1 my-1">
                 <button class="btn p-2 col primary-bg-color unary-btn" data-op="log">log</button>
-                <button class="btn p-2 col bg-white fw-bold" data-op="1">1</button>
-                <button class="btn p-2 col bg-white fw-bold" data-op="2">2</button>
-                <button class="btn p-2 col bg-white fw-bold" data-op="3">3</button>
+                <button class="btn p-2 col bg-white fw-bold digit-btn" data-op="1">1</button>
+                <button class="btn p-2 col bg-white fw-bold digit-btn" data-op="2">2</button>
+                <button class="btn p-2 col bg-white fw-bold digit-btn" data-op="3">3</button>
                 <button class="btn p-2 col primary-bg-color binary-btn" data-op="addition">+</button>
             </div>
             <div class="row gap-1 my-1">
                 <button class="btn p-2 col primary-bg-color unary-btn" data-op="naturallog">ln</button>
-                <button class="btn p-2 col primary-bg-color bg-white fw-bold input-manipulator-btn" data-op="sign"><sup>+</sup>/-</button>
-                <button class="btn p-2 col primary-bg-color bg-white fw-bold" data-op="0">0</button>
-                <button class="btn p-2 col primary-bg-color bg-white fw-bold binary-btn" data-op="decimal">.</button>
+                <button class="btn p-2 col primary-bg-color bg-white fw-bold input-manipulator-btn" data-op="togglesign"><sup>+</sup>/-</button>
+                <button class="btn p-2 col primary-bg-color bg-white fw-bold digit-btn" data-op="0">0</button>
+                <button class="btn p-2 col primary-bg-color bg-white fw-bold input-manipulator-btn" data-op="decimal">.</button>
                 <button class="btn p-2 btn-primary col" data-op="equals">=</button>
             </div>
             </div>

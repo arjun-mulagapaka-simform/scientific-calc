@@ -43,9 +43,11 @@ document.querySelectorAll('.digit-btn').forEach((button)=>{
 function handleUnaryOperation(e){
     let data = handleDataFetch(e);
     let op = handleOpFetch(e);
-    if (Number.isNaN(data) || !op) return;
+    if (data === null || op === null) return;
     let result = unaryActions[op](data);
     IOops.setData(result);
+    inp_stack.push(result);
+    inp_stack.display();
 }
 
 function handleBinaryOperation(e){
@@ -54,7 +56,7 @@ function handleBinaryOperation(e){
 
 function handleInpManipulationOperation(e){
     let op = handleOpFetch(e);
-    if (!op) return;
+    if (op === null) return;
     inputActions[op]();
 }
 
@@ -68,6 +70,7 @@ function handleDataFetch(){
         return value;       
     } catch (error) {
         alert(error);
+        return null;
     }   
 }
 
@@ -77,11 +80,15 @@ function handleOpFetch(e){
         return op;
     }catch (error) {
         alert(error);
+        return null;
     }
 }
 
 const inputActions = {
-    clear: () => IOops.clear(),
+    clear: () => {
+        IOops.clear();
+        inp_stack.clear();
+    },
     removelastchar: () => IOops.pop(),
     togglesign: () => IOops.toggleSign(),
     append: (e) => IOops.append(e),

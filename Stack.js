@@ -19,4 +19,14 @@ export class Stack {
         if (this.stack.length == 0) return false;
         return this.stack[this.stack.length-1];
     }
+    clear(){
+        if (this.stack.length==0) return;
+        this.stack.length = 0;
+    }
+    display() {
+        if (this.stack.length==0) return;
+        this.stack.forEach ((num)=>{
+            console.log(num);
+        });
+    }
 }
